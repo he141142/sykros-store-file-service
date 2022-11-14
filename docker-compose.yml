@@ -1,0 +1,17 @@
+# Use postgres/example user/password credentials
+version: '3.1'
+
+services:
+  dbpostgres:
+    image: postgres@sha256:2c1fb5ffd530cd8d7935ff71959dc548f83763b7c29038d62706b15e58a44285
+    container_name: sykros-store-file-service
+    restart: always
+    ports:
+      - '9002:5432'
+    environment:
+      POSTGRES_PASSWORD: fqQ3nN4L
+      POSTGRES_USER: sykros
+      POSTGRES_DB: sykros_store-files
+    volumes:
+      - D:/vmo/varadise/data-06-09/data:/var/lib/postgresql/data
+
