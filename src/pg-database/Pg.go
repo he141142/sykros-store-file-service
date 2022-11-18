@@ -15,7 +15,7 @@ func NewPG(connstring string) (*gorm.DB, error) {
 }
 
 func PGMigrate(migrationDir, connstring string) error {
-	mig, err := migrate.New(fmt.Sprintf("file://%s", migrationDir), connstring)
+	mig, err := migrate.New(fmt.Sprintf("files://%s", migrationDir), connstring)
 	if err != nil {
 		return err
 	}

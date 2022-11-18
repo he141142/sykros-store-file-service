@@ -5,8 +5,8 @@ import (
 	"net/http"
 )
 
-func (f *fileApi) Router() http.Handler {
+func (api *fileApi) Router() http.Handler {
 	r := chi.NewRouter()
-	r.Post("/upload", f.upload)
+	r.Post("/upload", api.upload)
 	return r
 }

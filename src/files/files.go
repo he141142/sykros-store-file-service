@@ -2,7 +2,7 @@ package files
 
 import "time"
 
-// File represents a file with its metadata
+// File represents a files with its metadata
 type File struct {
 	ID        uint      `json:"id"`
 	FileName  string    `json:"file_name"`

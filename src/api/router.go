@@ -19,7 +19,7 @@ func (handler *ApiHandler) BaseRouter(r *chi.Mux) *ApiHandler {
 		// -- routes --
 		// User route
 		if handler.FileApi != nil {
-			r.Mount("/file", handler.FileApi.Router())
+			r.Mount("/files", handler.FileApi.Router())
 		} else {
 			fmt.Println("FilesAPI is not registered therefore skipped")
 		}

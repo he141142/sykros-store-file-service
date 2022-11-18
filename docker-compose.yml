@@ -4,7 +4,7 @@ version: '3.1'
 services:
   dbpostgres:
     image: postgres@sha256:2c1fb5ffd530cd8d7935ff71959dc548f83763b7c29038d62706b15e58a44285
-    container_name: sykros-store-file-service
+    container_name: sykros-store-files-service
     restart: always
     ports:
       - '9002:5432'

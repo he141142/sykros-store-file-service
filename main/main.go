@@ -1,4 +1,4 @@
-package fileService
+package main
 
 import (
 	"context"
@@ -11,6 +11,7 @@ import (
 	"sykros.store-file-service.net/src/api"
 	"sykros.store-file-service.net/src/api/files"
 	db "sykros.store-file-service.net/src/pg-database"
+	files2 "sykros.store-file-service.net/src/service/files"
 	"time"
 )
 
@@ -30,7 +31,7 @@ func main() {
 
 	router := chi.NewRouter()
 
-	fileService := files.NewFileService().SetupLocalStorage(os.Getenv("FILES_DIR")).SetupDatabase(pg)
+	fileService := files2.NewFileService().SetupLocalStorage(os.Getenv("FILES_DIR")).SetupDatabase(pg)
 
 	api.NewHandler().SetFileAPI(files.InitFileAPI(fileService)).BaseRouter(router)
 
